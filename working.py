@@ -14,18 +14,4 @@
 #     print(i.x, end=' ')
 #
 
-# print(3//1)
-
-a = 2
-b = 3
-c = 4
-
-def func(x):
-    if x > a:
-        print('tak')
-    elif x > b:
-        print('tak')
-    elif x > c:
-        print('tak')
-
-func(10)
+# print(3//

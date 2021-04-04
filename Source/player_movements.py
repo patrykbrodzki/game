@@ -15,12 +15,10 @@ def left_right(keys, self):
 def key_up_down(keys, self):
     if keys[pygame.K_DOWN] and self.player_position.y < self.screen.screen_height - self.player_image_height:
         self.movement_direction.y = 1
-        # self.movement_direction.x = 0
         self.player_position.y += self.movement_direction.y * self.velocity
 
     elif keys[pygame.K_UP] and self.player_position.y > 0:
         self.movement_direction.y = - 1
-        # self.movement_direction.x = 0
         self.player_position.y += self.movement_direction.y * self.velocity
 
 
@@ -39,6 +37,7 @@ def key_not(keys, self):
 def is_jump(keys, self):
     if keys[pygame.K_SPACE]:
         self.is_jump = True
+        self.velocity /= 5
 
 
 def jump(self):
@@ -51,6 +50,7 @@ def jump(self):
     else:
         self.jump_count = 7
         self.is_jump = False
+        self.velocity *= 5
 
 # back up function - if that in events stopped working
 # def fire(keys, self):

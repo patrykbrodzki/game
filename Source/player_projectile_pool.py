@@ -45,10 +45,9 @@ class ProjectilePool:
     def animate(self):
         # Animate projectile when its status is active
         for projectile in self.projectile_pool.queue:
-            # projectile.position()
             if projectile.active:
                 # print values for debugging purposes (check if objects in memory are the same)
                 # print('Active -->  ', projectile)
                 projectile.draw()
             # else:
-                # print('NOT ACTIVE -->  ', projectile)
+            #     print('NOT ACTIVE -->  ', projectile)

@@ -83,10 +83,9 @@ class Player:
         keys = pygame.key.get_pressed()
 
         left_right(keys, self)
-
+        key_up_down(keys, self)
         if not self.is_jump:
             is_jump(keys, self)
-            key_up_down(keys, self)
         else:
             jump(self)
 
@@ -98,26 +97,21 @@ class Player:
 
         # conditions where different images of the player are picked to animate
 
-        # TODO
-        #     zmieni¢ warunki aby prawidłowo wyswietlały sie animacje
-
         if not self.standing:
-            if self.movement_direction.x < 0:
-                self.screen.screen_display.blit(self.walkLeft[self.current_frame],
-                                                (self.player_position.x, self.player_position.y))
-
-            elif self.movement_direction.x > 0:
-                self.screen.screen_display.blit(self.walkRight[self.current_frame],
-                                                (self.player_position.x, self.player_position.y))
-
-            elif self.movement_direction.y < 0:
+            if self.movement_direction.y < 0:
                 self.screen.screen_display.blit(self.walkUp[self.current_frame],
                                                 (self.player_position.x, self.player_position.y))
 
             elif self.movement_direction.y > 0:
                 self.screen.screen_display.blit(self.walkDown[self.current_frame],
                                                 (self.player_position.x, self.player_position.y))
+            elif self.movement_direction.x < 0:
+                self.screen.screen_display.blit(self.walkLeft[self.current_frame],
+                                                (self.player_position.x, self.player_position.y))
 
+            elif self.movement_direction.x > 0:
+                self.screen.screen_display.blit(self.walkRight[self.current_frame],
+                                                (self.player_position.x, self.player_position.y))
         else:
             if self.movement_direction.x < 0:
                 self.screen.screen_display.blit(self.walkLeft[0], (self.player_position.x, self.player_position.y))
