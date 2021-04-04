@@ -5,12 +5,10 @@ import pygame
 def left_right(keys, self):
     if keys[pygame.K_LEFT] and self.player_position.x > 0 - self.velocity:
         self.movement_direction.x = - 1
-        # self.movement_direction.y = 0
         self.player_position.x += self.movement_direction.x * self.velocity
 
     elif keys[pygame.K_RIGHT] and self.player_position.x < self.screen.screen_width - self.player_image_width + self.velocity:
         self.movement_direction.x = 1
-        # self.movement_direction.y = 0
         self.player_position.x += self.movement_direction.x * self.velocity
 
 
@@ -29,13 +27,6 @@ def key_up_down(keys, self):
 def key_not(keys, self):
     if not keys[pygame.K_DOWN] and not keys[pygame.K_UP] and not keys[pygame.K_LEFT] and not keys[pygame.K_RIGHT]:
         self.standing = True
-    #     test
-    # elif not keys[pygame.K_DOWN] and not keys[pygame.K_UP]:
-    #     self.movement_direction.y = 0
-    #     self.standing = False
-    # elif not keys[pygame.K_LEFT] and not keys[pygame.K_RIGHT]:
-    #     self.movement_direction.x = 0
-    #     self.standing = False
     else:
         if not keys[pygame.K_DOWN] and not keys[pygame.K_UP]:
             self.movement_direction.y = 0

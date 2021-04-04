@@ -97,6 +97,10 @@ class Player:
         self.update()
 
         # conditions where different images of the player are picked to animate
+
+        # TODO
+        #     zmieni¢ warunki aby prawidłowo wyswietlały sie animacje
+
         if not self.standing:
             if self.movement_direction.x < 0:
                 self.screen.screen_display.blit(self.walkLeft[self.current_frame],
@@ -126,18 +130,6 @@ class Player:
             else:
                 self.screen.screen_display.blit(self.walkDown[0], (self.player_position.x, self.player_position.y))
 
-    # def test_function(self):
-    #     if left_right:
-    #         print('left or right')
-    #         # self.movement_direction.y = 0
-    #     if key_up_down:
-    #         print('up or down')
-    #         # self.movement_direction.x = 0
-    #     if key_up_down and left_right:
-    #         print('both')
-    #         # self.movement_direction.y = 0
-    #         # self.movement_direction.x = 0
-    #
 
 # Test class - checking if works with example inheritance (for enemy or the second player character)
 # class Enemy(Player):

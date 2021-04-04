@@ -42,21 +42,10 @@ class Projectile:
         self.projectile_width, self.projectile_height = self.animation_right[0].get_size()
 
     def position(self):
-        # return print(self.projectile_position.x, self.projectile_position.y)
         return print('x  ', self.movement_direction.x, 'y   ', self.movement_direction.y)
 
     def is_active(self):
         return self.active
-
-    # tu mi zostają zmienne movement.y które decydują, że ciągle kulka leci mi na skos albo ggora dół
-    # to musi być powiązane z plraer_movements -> sprawdzić
-
-    # def activate(self, player_movement_direction, player_position):
-    #     self.active = True
-    #     self.projectile_position.x = player_position.x
-    #     self.projectile_position.y = player_position.y
-    #     self.movement_direction.x = player_movement_direction.x
-    #     self.movement_direction.y = player_movement_direction.y
 
     def activate(self, player_movement_direction, player_position):
         self.active = True
@@ -77,7 +66,6 @@ class Projectile:
     def draw(self):
         self.update()
 
-        # print(self.movement_direction.x, self.movement_direction.y)
         # counts milliseconds from start of the game to display proper animation image
         now = pygame.time.get_ticks()
         if now - self.last_update > 150:
@@ -103,9 +91,6 @@ class Projectile:
             elif self.movement_direction.y < 0:
                 self.screen.screen_display.blit(self.animation_up[self.current_frame],
                                                 (self.projectile_position.x, self.projectile_position.y - start_position_offset))
-
-    # TODO
-    # zrobić do końca animacje w każde strony i na skos
 
     # this method updates projectile_position with its direction and velocity
     def update(self):
