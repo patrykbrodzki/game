@@ -5,7 +5,7 @@ from Source.player_projectile_pool import ProjectilePool
 
 
 class Player:
-    def __init__(self, player_image, velocity, screen):
+    def __init__(self, player_image, velocity, screen, projectile_pool_count):
         # Player image and sprites
         self.player_image = pygame.image.load(player_image)
         self.player_image_width, self.player_image_height = self.player_image.get_size()
@@ -53,7 +53,8 @@ class Player:
         self.jump_count = 7
 
         # Create Player projectile pool with and define constant pool capacity (int parameter)
-        self.projectile_pool = ProjectilePool(2, self.screen)
+        self.projectile_pool_count = projectile_pool_count
+        self.projectile_pool = ProjectilePool(self.projectile_pool_count, self.screen)
 
     def player_projectile_pool_initialize(self):
         self.projectile_pool.initiate()

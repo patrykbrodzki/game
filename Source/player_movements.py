@@ -37,7 +37,7 @@ def key_not(keys, self):
 def is_jump(keys, self):
     if keys[pygame.K_SPACE]:
         self.is_jump = True
-        self.velocity /= 5
+        self.velocity /= 2
 
 
 def jump(self):
@@ -50,7 +50,7 @@ def jump(self):
     else:
         self.jump_count = 7
         self.is_jump = False
-        self.velocity *= 5
+        self.velocity *= 2
 
 # back up function - if that in events stopped working
 # def fire(keys, self):

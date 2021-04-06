@@ -15,3 +15,14 @@
 #
 
 # print(3//
+
+a = []
+
+def adder(*args):
+    print(args)
+    for i in args:
+        a.append(i)
+
+adder(1,2,3,4,5,6,7)
+
+print(a)

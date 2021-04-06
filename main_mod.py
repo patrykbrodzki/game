@@ -1,4 +1,4 @@
-from Source.screen import Screen
+from Source.screen import first_screen
 from Source.player_mod import Player
 from Source.player_events_movements import *
 
@@ -9,18 +9,14 @@ pygame.mouse.set_visible(True)
 clock = pygame.time.Clock()
 
 # Title and Icon
-pygame.display.set_caption('Testowe miciostwo')
+pygame.display.set_caption('test_game')
 
-# icon = pygame.image.load('/home/micju/Desktop/test_game/Images/character/char_moving/1.PNG')
 icon = pygame.image.load('Images/character/char_moving/1.PNG')
 pygame.display.set_icon(icon)
 
-# Creating first screen and displaying background
-first_screen = Screen(800, 600, 'Images/background.PNG', [0, 0])
-# intro_screen = Screen(1024, 800, 'Images/magic_spell/magic/S1.png', [0, 0])
 
 # Creating player
-player = Player('Images/character/char_moving/1.PNG', 10, first_screen)
+player = Player('Images/character/char_moving/1.PNG', 5, first_screen, 5)
 # Creating player projectile pool
 player.player_projectile_pool_initialize()
 
