@@ -2,8 +2,6 @@ from Source.screen import first_screen
 from Source.player import Player
 from Source.player_events_movements import *
 
-from Screens.level_editor import test_screen
-
 # Initialize the pygame
 pygame.init()
 pygame.mouse.set_visible(True)
@@ -30,7 +28,7 @@ def draw_line():
 # Drawing game window
 def drawGameWindow():
     first_screen.draw()
-    # test_screen.draw()
+
     player.draw_player()
     draw_line()
 

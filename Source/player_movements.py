@@ -7,7 +7,10 @@ def left_right(keys, self):
         self.movement_direction.x = - 1
         self.player_position.x += self.movement_direction.x * self.velocity
 
-    elif keys[pygame.K_RIGHT] and self.player_position.x < self.screen.screen_width - self.player_image_width + self.velocity:
+
+    # elif keys[pygame.K_RIGHT] and self.player_position.x < self.screen.screen_width - self.player_image_width + self.velocity:
+    # test
+    elif keys[pygame.K_RIGHT] and self.player_position.x < self.screen.background_width - self.player_image_width + self.velocity:
         self.movement_direction.x = 1
         self.player_position.x += self.movement_direction.x * self.velocity
 

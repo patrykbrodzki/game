@@ -9,6 +9,8 @@ class Screen:
         self.background_image = pygame.image.load(background_image)
         self.background_location = background_location
         self.screen_display = pygame.display.set_mode((self.screen_width, self.screen_height), pygame.RESIZABLE)
+        # test
+        self.background_width = self.background_image.get_width()
 
     # Drawing screen with background. If user changes widht/height of the screen on the computer
     # pygame.display.get_window_size() will return tuple with new screen width/height
