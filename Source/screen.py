@@ -20,3 +20,4 @@ class Screen:
 
 
 first_screen = Screen(SCREEN_WIDTH, SCREEN_HEIGHT, 'Images/background.PNG', [0, 0])
+
